@@ -19,3 +19,19 @@ files/tmp/*
 
 # ignore sitemap.xml
 /sitemap.xml
+# Vercel
+.vercel
+.vercel/
+
+# Dossiers systèmes
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environnement
+.env
+.env.local
