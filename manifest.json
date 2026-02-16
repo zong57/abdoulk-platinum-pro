@@ -1,0 +1,10 @@
+{
+  "name": "A Platinum",
+  "short_name": "A",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ff88",
+  "icons": [{ "src": "https://img.icons8.com", "sizes": "512x512", "type": "image/png" }]
+}
+
