@@ -3,87 +3,170 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A | PLATINUM CYBER-TV 💎</title>
-    <link rel="manifest" href="/manifest.json">
+    <title>A | BARÇA LIVE TV 🔵🔴</title>
     <link href="https://fonts.googleapis.com" rel="stylesheet">
     <style>
-        :root { --primary: #00ff88; --secondary: #ff4500; --gold: #ffd700; --dark: #000; }
-        body{ font-family: 'Inter', sans-serif; margin:0; background: var(--dark); color:white; text-align:center; user-select:none; overflow-x: hidden; }
-        .celebration-bar { background: linear-gradient(90deg, var(--gold), #b8860b); color: #000; padding: 6px; font-weight: 900; font-size: 11px; text-transform: uppercase; }
-        header{ background:rgba(0,0,0,0.9); padding:15px 0; border-bottom: 2px solid var(--primary); position: sticky; top:0; z-index:1000; backdrop-filter: blur(15px); }
-        .header-content { display: flex; align-items: center; justify-content: space-around; max-width: 500px; margin: auto; }
-        .circle-logo { width: 70px; height: 70px; background: #000; border: 3px solid #fff; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 0 20px var(--primary); cursor: pointer; }
-        .super-a { font-family: 'Orbitron', sans-serif; font-size: 45px; font-weight: 900; background: linear-gradient(to bottom, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bell { font-size: 24px; cursor: pointer; position: relative; animation: ring 2s infinite; transform-origin: 50% 0; }
-        @keyframes ring { 0%,50%,100%{transform:rotate(0)} 10%,30%{transform:rotate(15deg)} 20%,40%{transform:rotate(-15deg)} }
-        .hero { width: 100%; height: 260px; position: relative; overflow: hidden; border-bottom: 1px solid #222; }
-        .hero video { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
-        .hub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 20px; max-width: 500px; margin: auto; }
-        .icon { width: 50px; height: 50px; border-radius: 12px; margin: 0 auto 5px; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 5px 15px #000; border: 1px solid #333; }
-        .yt { background: #f00; } .tk { background: #000; border:1px solid #fff; } .fb { background: #1877f2; } .wa { background: #25d366; }
-        .docs-scroll { display: flex; overflow-x: auto; gap: 15px; padding: 15px; scroll-behavior: smooth; }
-        .doc-card { min-width: 260px; background: #111; border-radius: 15px; border: 1px solid var(--primary); padding: 10px; text-align: left; }
-        .vip-whatsapp { position: fixed; bottom: 85px; right: 20px; background: #25d366; width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 28px; box-shadow: 0 4px 15px rgba(37,211,102,0.5); z-index: 2000; text-decoration: none; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);} }
-        .music-player { position: fixed; bottom: 20px; left: 20px; background: rgba(0,255,136,0.1); border: 1px solid var(--primary); padding: 10px; border-radius: 50px; backdrop-filter: blur(10px); display: flex; align-items: center; gap: 10px; z-index: 1500; }
-        .music-btn { background: var(--primary); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 20px; }
-        .btn-p { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: #000; border:0; padding:18px 40px; border-radius:50px; font-weight:900; cursor:pointer; margin:25px; box-shadow: 0 10px 20px rgba(0,255,136,0.3); }
+        :root { --barca-red: #A50044; --barca-blue: #004D98; --gold: #EDBB00; --dark: #050505; }
+        body{ font-family: 'Inter', sans-serif; margin:0; background: var(--dark); color:white; text-align:center; overflow-x: hidden; }
+        
+        /* HEADER BARÇA */
+        header { 
+            background: linear-gradient(90deg, var(--barca-blue), var(--barca-red)); 
+            padding: 15px 0; border-bottom: 3px solid var(--gold); 
+            position: sticky; top:0; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+        .logo-barca { width: 60px; height: 60px; vertical-align: middle; filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); }
+        .app-name { font-family: 'Orbitron', sans-serif; font-size: 25px; margin-left: 10px; color: var(--gold); text-shadow: 2px 2px #000; }
+
+        /* SECTION MATCH */
+        .live-container { padding: 15px; max-width: 650px; margin: auto; }
+        .video-box { 
+            background: #000; border-radius: 15px; border: 4px solid var(--gold); 
+            overflow: hidden; position: relative; box-shadow: 0 0 30px rgba(237, 187, 0, 0.4);
+        }
+        .live-badge { 
+            position: absolute; top: 15px; left: 15px; background: #ff0000; 
+            color: white; padding: 5px 12px; border-radius: 5px; 
+            font-weight: 900; font-size: 14px; animation: pulse 1s infinite; z-index: 10; 
+        }
+        @keyframes pulse { 0% {opacity:1;} 50% {opacity:0.5;} 100% {opacity:1;} }
+
+        /* HUB SOCIAL */
+        .hub { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 20px; max-width: 500px; margin: auto; }
+        .icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; background: #111; border: 1px solid #333; margin: 0 auto 5px; }
+
+        .btn-share { 
+            background: var(--gold); color: #000; border: none; padding: 18px; 
+            width: 85%; border-radius: 50px; font-weight: 900; font-size: 1rem; 
+            cursor: pointer; margin: 20px 0; box-shadow: 0 10px 20px rgba(237, 187, 0, 0.3); 
+        }
     </style>
 </head>
 <body>
-    <div class="celebration-bar">🏆 RECORD : 1500 VISITEURS ! MERCI À TOUS ! 💎</div>
+
     <header>
-        <div class="header-content">
-            <div class="circle-logo" onclick="location.reload()"><div class="super-a">A</div></div>
-            <div class="bell" onclick="alert('🔴 LIVE IMMINENT ! Restez branchés !')">🔔<span style="position:absolute;top:0;right:0;width:10px;height:10px;background:var(--secondary);border-radius:50%;"></span></div>
-        </div>
+        <img src="https://upload.wikimedia.org" class="logo-barca" alt="Barça">
+        <span class="app-name">A PLATINUM TV</span>
     </header>
 
-    <div class="hero">
-        <video autoplay muted loop playsinline><source src="https://assets.mixkit.co" type="video/mp4"></video>
-        <div style="position:absolute; top:50%; width:100%; transform:translateY(-50%);">
-            <h1 style="color:var(--gold); margin:0; text-shadow: 2px 2px 15px #000;">CYBER TV PLATINUM</h1>
-            <p style="font-size: 11px; font-weight: 700;">1500+ FANS ACTIFS</p>
+    <div class="live-container">
+        <h2 style="color:var(--gold); text-transform: uppercase;">⚽ GÉRONE vs FC BARCELONE 🔵🔴</h2>
+        <div class="video-box">
+            <div class="live-badge">EN DIRECT</div>
+            <!-- ID DU MATCH : Rdta45g_hg8 (ID OFFICIEL BARÇA TV) -->
+            <iframe width="100%" height="350" 
+                src="https://www.youtube.com" 
+                frameborder="0" allowfullscreen>
+            </iframe>
         </div>
+        <p style="color:#aaa; font-size: 12px; margin-top: 10px;">🔴 Suivez le choc de la Liga en temps réel sur l'App A.</p>
     </div>
 
-    <div class="hub-grid">
-        <a href="https://www.youtube.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon yt">📺</div>YouTube</a>
-        <a href="https://www.tiktok.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon tk">🎵</div>TikTok</a>
-        <a href="https://www.facebook.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon fb">👥</div>Facebook</a>
-        <a href="https://t.me" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon wa" style="background:#0088cc;">✈️</div>Telegram</a>
+    <div class="hub">
+        <a href="https://www.facebook.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#1877F2;color:white;">f</div>Facebook</a>
+        <a href="https://www.tiktok.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#000;color:white;border:1px solid #fff;">🎵</div>TikTok</a>
+        <a href="https://www.youtube.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#FF0000;color:white;">▶️</div>YouTube</a>
+        <a href="https://api.whatsapp.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#25D366;color:white;">💬</div>WhatsApp</a>
     </div>
 
-    <h2 style="color:var(--gold); margin-top:20px; font-size:1.1rem;">🎬 DOCUMENTAIRES EXCLUSIFS 🎥</h2>
-    <div class="docs-scroll">
-        <div class="doc-card"><iframe width="100%" height="140" src="https://www.youtube.com" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe><p style="font-size:11px;font-weight:bold;margin-top:8px;">L'IA : LE FUTUR 🤖</p></div>
-        <div class="doc-card" style="border-color:var(--gold);"><iframe width="100%" height="140" src="https://www.youtube.com" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe><p style="font-size:11px;font-weight:bold;margin-top:8px;">PYRAMIDES 🏛️</p></div>
-        <div class="doc-card" style="border-color:var(--secondary);"><iframe width="100%" height="140" src="https://www.youtube.com" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe><p style="font-size:11px;font-weight:bold;margin-top:8px;">SUCCÈS 💎</p></div>
-    </div>
-
-    <button class="btn-p" onclick="shareMe()">PROPAGER L'APP A 🚀</button>
-
-    <a href="https://wa.me🚀" class="vip-whatsapp" target="_blank">🟢</a>
-
-    <div class="music-player">
-        <button class="music-btn" onclick="toggleMusic()" id="mu-btn">🎵</button>
-        <div onclick="alert('Minuteur 30 min activé ! 🌙')" style="cursor:pointer; text-align:left;"><span style="font-size:9px;color:var(--primary);font-weight:bold;">MODE ZEN</span></div>
-        <audio id="bg-audio" loop><source src="https://www.chosic.com" type="audio/mp3"></audio>
-    </div>
+    <button class="btn-share" onclick="shareMatch()">PARTAGER LE LIVE SUR FACEBOOK 🚀</button>
 
     <script>
-        async function shareMe() {
-            try { await navigator.share({ title: 'App A Platinum', text: '1500 fans déjà ! Rejoins-nous !', url: window.location.href }); }
-            catch (err) { navigator.clipboard.writeText(window.location.href); alert("Lien copié !"); }
+        function shareMatch() {
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({ title: 'Barça vs Gérone LIVE', text: 'Viens voir le match du Barça ici ! ⚽', url: url });
+            } else {
+                window.open('https://www.facebook.com' + url, '_blank');
+            }
         }
-        function toggleMusic() {
-            const a = document.getElementById('bg-audio'); const b = document.getElementById('mu-btn');
-            if (a.paused) { a.play(); b.innerText="⏸️"; b.style.background="#ff4500"; }
-            else { a.pause(); b.innerText="🎵"; b.style.background="#00ff88"; }
-        }
-        if('serviceWorker' in navigator){ navigator.serviceWorker.register('/service-worker.js'); }
         document.addEventListener('contextmenu', e => e.preventDefault());
     </script>
 </body>
-  </html>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A | BARÇA LIVE TV 🔵🔴</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <style>
+        :root { --barca-red: #A50044; --barca-blue: #004D98; --gold: #EDBB00; --dark: #050505; }
+        body{ font-family: 'Inter', sans-serif; margin:0; background: var(--dark); color:white; text-align:center; overflow-x: hidden; }
+        
+        /* HEADER BARÇA */
+        header { 
+            background: linear-gradient(90deg, var(--barca-blue), var(--barca-red)); 
+            padding: 15px 0; border-bottom: 3px solid var(--gold); 
+            position: sticky; top:0; z-index: 1000; box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+        }
+        .logo-barca { width: 60px; height: 60px; vertical-align: middle; filter: drop-shadow(0 0 10px rgba(255,255,255,0.5)); }
+        .app-name { font-family: 'Orbitron', sans-serif; font-size: 25px; margin-left: 10px; color: var(--gold); text-shadow: 2px 2px #000; }
 
+        /* SECTION MATCH */
+        .live-container { padding: 15px; max-width: 650px; margin: auto; }
+        .video-box { 
+            background: #000; border-radius: 15px; border: 4px solid var(--gold); 
+            overflow: hidden; position: relative; box-shadow: 0 0 30px rgba(237, 187, 0, 0.4);
+        }
+        .live-badge { 
+            position: absolute; top: 15px; left: 15px; background: #ff0000; 
+            color: white; padding: 5px 12px; border-radius: 5px; 
+            font-weight: 900; font-size: 14px; animation: pulse 1s infinite; z-index: 10; 
+        }
+        @keyframes pulse { 0% {opacity:1;} 50% {opacity:0.5;} 100% {opacity:1;} }
+
+        /* HUB SOCIAL */
+        .hub { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 20px; max-width: 500px; margin: auto; }
+        .icon { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; background: #111; border: 1px solid #333; margin: 0 auto 5px; }
+
+        .btn-share { 
+            background: var(--gold); color: #000; border: none; padding: 18px; 
+            width: 85%; border-radius: 50px; font-weight: 900; font-size: 1rem; 
+            cursor: pointer; margin: 20px 0; box-shadow: 0 10px 20px rgba(237, 187, 0, 0.3); 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://upload.wikimedia.org" class="logo-barca" alt="Barça">
+        <span class="app-name">A PLATINUM TV</span>
+    </header>
+
+    <div class="live-container">
+        <h2 style="color:var(--gold); text-transform: uppercase;">⚽ GÉRONE vs FC BARCELONE 🔵🔴</h2>
+        <div class="video-box">
+            <div class="live-badge">EN DIRECT</div>
+            <!-- ID DU MATCH : Rdta45g_hg8 (ID OFFICIEL BARÇA TV) -->
+            <iframe width="100%" height="350" 
+                src="https://www.youtube.com" 
+                frameborder="0" allowfullscreen>
+            </iframe>
+        </div>
+        <p style="color:#aaa; font-size: 12px; margin-top: 10px;">🔴 Suivez le choc de la Liga en temps réel sur l'App A.</p>
+    </div>
+
+    <div class="hub">
+        <a href="https://www.facebook.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#1877F2;color:white;">f</div>Facebook</a>
+        <a href="https://www.tiktok.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#000;color:white;border:1px solid #fff;">🎵</div>TikTok</a>
+        <a href="https://www.youtube.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#FF0000;color:white;">▶️</div>YouTube</a>
+        <a href="https://api.whatsapp.com" style="text-decoration:none;color:#888;font-size:10px;"><div class="icon" style="background:#25D366;color:white;">💬</div>WhatsApp</a>
+    </div>
+
+    <button class="btn-share" onclick="shareMatch()">PARTAGER LE LIVE SUR FACEBOOK 🚀</button>
+
+    <script>
+        function shareMatch() {
+            const url = window.location.href;
+            if (navigator.share) {
+                navigator.share({ title: 'Barça vs Gérone LIVE', text: 'Viens voir le match du Barça ici ! ⚽', url: url });
+            } else {
+                window.open('https://www.facebook.com' + url, '_blank');
+            }
+        }
+        document.addEventListener('contextmenu', e => e.preventDefault());
+    </script>
+</body>
+</html>
